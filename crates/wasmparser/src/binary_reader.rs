@@ -741,7 +741,8 @@ impl<'a> BinaryReader<'a> {
         format_err!(offset, "invalid leading byte (0x{byte:x}) for {desc}")
     }
 
-    pub(crate) fn peek(&self) -> Result<u8> {
+    #[allow(missing_docs)]
+    pub fn peek(&self) -> Result<u8> {
         self.ensure_has_byte()?;
         Ok(self.buffer[self.position])
     }
